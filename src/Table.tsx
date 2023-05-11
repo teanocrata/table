@@ -28,7 +28,7 @@ const getColumn = (index: number, getCellData: (rowIndex: number, columnIndex: n
     );
 }
 
-
+const formatNumber = (num: number) => new Intl.NumberFormat().format(num);
 
 export const Table = () => {
     const [numRows, setNumRows] = React.useState(10);
@@ -38,11 +38,14 @@ export const Table = () => {
     return (
         <HotkeysProvider>
             <>
-                <div>
+                <div className="row">
+                    <label>Rows</label>
                     <input type="number" value={numRows} onChange={changeNum(setNumRows)} />
+                    <label>Columns</label>
                     <input type="number" value={numColumn} onChange={changeNum(setNumColumns)} />
+                    <span>{formatNumber(numRows)} x {formatNumber(numColumn)}</span>
                 </div>
-                <div style={{ height: '90vh' }}>
+                <div className="tableContainer">
                     <Table2
                         numRows={numRows}
                         enableFocusedCell={true}
