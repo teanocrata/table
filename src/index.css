@@ -4,16 +4,25 @@
 @import "@blueprintjs/table/lib/css/table.css";
 @import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 
-
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  height: calc(100vh - 16px);
+  overflow: hidden;
+}
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   gap: 1rem;
-  padding: 1rem;
+  flex: 0 0 auto;
 }
 
 .tableContainer {
-    height: 90vh;
+  flex: 1 1 auto;
+  overflow: hidden;
+  max-height: 100%;
 }
